@@ -1,0 +1,219 @@
+* {
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+ul {
+  margin: 0;
+}
+
+.frontpage {
+  background-color: lightgray;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.head {
+  border-bottom: 2px orange solid;
+  width: 20rem;
+  text-align: center;
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.descrip_1 {
+  margin-bottom: 0.5rem;
+}
+
+/* 아래부터 버튼과 관련된 css */
+.more_btn {
+  margin-top: 1rem;
+  border: none;
+  min-width: 200px;
+  min-height: 50px;
+  background: linear-gradient(
+    90deg,
+    rgb(219, 159, 28) 0%,
+    rgb(240, 161, 42) 100%
+  );
+  border-radius: 1000px;
+  color: darkslategray;
+  cursor: pointer;
+  box-shadow: 12px 12px 24px rgba(240, 192, 37, 0.685);
+  font-weight: 700;
+  transition: 0.3s;
+}
+
+.more_btn:hover {
+  transform: scale(1.2);
+  color: white;
+}
+
+.more_btn:hover::after {
+  content: "";
+  border-radius: 100%;
+  border: 6px solid #f5b11f;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: ring 1.5s infinite;
+}
+
+@keyframes ring {
+  0% {
+    width: 30px;
+    height: 30px;
+    opacity: 1;
+  }
+  100% {
+    width: 300px;
+    height: 300px;
+    opacity: 0;
+  }
+}
+
+/* 내 정보 */
+.intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.info_1 {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-top: 2rem;
+}
+
+.info_2 {
+  margin-bottom: 2rem;
+}
+
+/* 기술 스택 */
+.skills {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  background-color: orange;
+}
+
+.skill_1 {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+.skill_2 {
+  padding-top: 2rem;
+}
+
+/* 프로젝트 */
+.project {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.project li {
+  display: inline-block;
+  text-align: center;
+}
+
+/* 커리어 */
+.career {
+  background-color: skyblue;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.career_1 {
+  margin-top: 3rem;
+}
+
+.career_1 > h4, p {
+  text-align: center;
+}
+
+/* 꼬리말 */
+.footer {
+  background-color: white;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.footer li {
+  display: inline-block;
+}
+
+/* 1190px 이하일 경우 프로젝트를 세로 배치 */
+@media (max-width: 1190px) {
+  .project li {
+    display: block;
+    margin-bottom: 2rem;
+  }
+}
+
+/* 768px 이하일 경우 내 정보와 기술 스택을 세로로 배치 */
+@media (max-width: 768px) {
+  .info_1, .skill_1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .info_1 h4 {
+    text-align: center;
+  }
+
+  .skill_1 h4 {
+    text-align: center;
+  }
+}
+
+/* 1. not-provied 클래스를 기본적으로 보이지 않도록 설정 */
+.not-provied {
+  display: none;
+}
+
+/* 2. 470px 밑으로가면, not-provied만 보이도록 설정 */
+@media (max-width: 470px) {
+  main,
+  section,
+  nav,
+  footer {
+    display: none !important;
+  }
+  .not-provied {
+    display: block;
+  }
+}
